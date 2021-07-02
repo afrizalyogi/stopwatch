@@ -23,9 +23,9 @@
 ## Preview
 
 #### Features :
-- Set Countdown time
-- Set break time
-- Play, Pause and Reset button
+- Set session/countdown time.
+- Set break time.
+- Play, Pause and Reset button.
 
 <br/>
 ## License
