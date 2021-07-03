@@ -21,6 +21,10 @@
 ---
 
 ## Preview
+This is preview of the project. You can visit live preview on <a href="https://afrizalyogi.github.io/stopwatch" target="_blank">here</a>.
+<a href="https://afrizalyogi.github.io/stopwatch">
+  <img src="./src/assets/stopwatch_preview.gif" alt="Stopwatch"/>
+</a>
 
 #### Features :
 - Set session/countdown time.

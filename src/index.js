@@ -231,7 +231,7 @@ class Timer extends React.Component {
             </button>
           </div>
         </div>
-        <div className="author">
+        <div id="credit">
           {" "}
           Made with &nbsp;<i class="far fa-heart"></i>&nbsp; by <a href="https://afrizalyogi.github.io" target="_blank">Afrizal Yogi</a>
         </div>
@@ -241,7 +241,7 @@ class Timer extends React.Component {
           ref={(audio) => {
             this.audioBeep = audio;
           }}
-          src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"
+          src="https://raw.githubusercontent.com/afrizalyogi/stopwatch/main/src/assets/BeepSound.wav"
         />
       </div>
     );
