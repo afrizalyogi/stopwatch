@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./solid.min.css";
+import "./fontawesome.min.css";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-const projectName = "stopwatch";
-
+// Stopwatch project with React by Afrizal Yogi
 const accurateInterval = function(fn, time) {
   var cancel, nextAt, timeout, wrapper;
   nextAt = new Date().getTime() + time;
@@ -23,7 +24,7 @@ const accurateInterval = function(fn, time) {
   };
 };
 
-// Components:
+// Components for Length Control including Title, Control Button and Length Time
 class TimerLengthControl extends React.Component {
   render() {
     return(
@@ -43,6 +44,7 @@ class TimerLengthControl extends React.Component {
   }
 }
 
+// Components of Timer and rendered content
 class Timer extends React.Component {
   constructor(props) {
     super(props);
@@ -194,8 +196,8 @@ class Timer extends React.Component {
     return (
       <div>
         <div id="box-center">
-          <div className="timer">
-            <div className="timer-wrapper">
+          <div id="timer">
+            <div id="timer-wrapper">
               <div id="timer-label">{this.state.timerType}</div>
               <div id="time-left" style={this.state.alarmColor}>{this.clockify()}</div>
             </div>
@@ -218,7 +220,7 @@ class Timer extends React.Component {
             title="Session Time"
             titleID="session-label"
           />
-          <div className="timer-control">
+          <div id="timer-control">
             <button id="start_stop" onClick={this.timerControl}>
               <i className="fas fa-pause fa-2x"/>
               <i className="fas fa-play fa-2x"/>
@@ -230,7 +232,7 @@ class Timer extends React.Component {
         </div>
         <div id="credit">
           {" "}
-          <i class="fas fa-code"></i>&nbsp; with &nbsp;<i class="fas fa-heart"></i>&nbsp; by <a href="https://afrizalyogi.github.io" target="_blank">Afrizal Yogi</a>
+          <i className="fas fa-code"></i>&nbsp; with &nbsp;<i className="fas fa-heart"></i>&nbsp; by <a href="https://afrizalyogi.github.io" target="_blank" rel="noopener noreferrer">Afrizal Yogi</a>
         </div>
         <audio
           id="beep"
@@ -238,7 +240,7 @@ class Timer extends React.Component {
           ref={(audio) => {
             this.audioBeep = audio;
           }}
-          src="https://raw.githubusercontent.com/afrizalyogi/stopwatch/main/src/assets/BeepSound.wav"
+          src="https://cdn.jsdelivr.net/gh/afrizalyogi/stopwatch@main/src/assets/BeepSound.wav"
         />
       </div>
     );
