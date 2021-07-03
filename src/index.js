@@ -1,7 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./solid.min.css";
-import "./fontawesome.min.css";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
