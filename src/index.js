@@ -52,8 +52,7 @@ class Timer extends React.Component {
       timerState: "stopped",
       timerType: "Session",
       timer: 1500,
-      intervalID: "",
-      alarmColor: { color: "white" }
+      intervalID: ""
     };
     this.setBrkLength = this.setBrkLength.bind(this);
     this.setSeshLength = this.setSeshLength.bind(this);
@@ -151,23 +150,22 @@ class Timer extends React.Component {
     }
   }
   warning(_timer) {
-    if (_timer < 61) {
-      this.setState({ alarmColor: { color: "#a50d0d" } });
+    if (_timer < 10) {
+      this.setState({ alarmColor: { color: "#ff5555" } });
     } 
     else {
-      this.setState({ alarmColor: { color: "white" } });
+      this.setState({ alarmColor: { color: "#fff" } });
     }
   }
   buzzer(_timer) {
-    if (_timer === 0) {
+    if (_timer === 3) {
       this.audioBeep.play();
     }
   }
   switchTimer(num, str) {
     this.setState({
       timer: num,
-      timerType: str,
-      alarmColor: { color: "white" }
+      timerType: str
     });
   }
   clockify() {
@@ -184,8 +182,7 @@ class Timer extends React.Component {
       timerState: "stopped",
       timerType: "Session",
       timer: 1500,
-      intervalID: "",
-      alarmColor: { color: "white" }
+      intervalID: ""
     });
     if (this.state.intervalID) {
       this.state.intervalID.cancel();
@@ -197,10 +194,10 @@ class Timer extends React.Component {
     return (
       <div>
         <div id="box-center">
-          <div className="timer" style={this.state.alarmColor}>
+          <div className="timer">
             <div className="timer-wrapper">
               <div id="timer-label">{this.state.timerType}</div>
-              <div id="time-left">{this.clockify()}</div>
+              <div id="time-left" style={this.state.alarmColor}>{this.clockify()}</div>
             </div>
           </div>
           <TimerLengthControl
@@ -233,7 +230,7 @@ class Timer extends React.Component {
         </div>
         <div id="credit">
           {" "}
-          Made with &nbsp;<i class="far fa-heart"></i>&nbsp; by <a href="https://afrizalyogi.github.io" target="_blank">Afrizal Yogi</a>
+          <i class="fas fa-code"></i>&nbsp; with &nbsp;<i class="fas fa-heart"></i>&nbsp; by <a href="https://afrizalyogi.github.io" target="_blank">Afrizal Yogi</a>
         </div>
         <audio
           id="beep"
